@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camp - Find the Perfect Hotel</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="../img/CAMPBOOKING_LOGO1-.png" type="image/x-icon">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
+    <!-- Navigation -->
+    <header
+      class="bg-white/30 backdrop-blur-md transition-all duration-300 shadow-sm dark:bg-gray-800 sticky top-0 z-50"
+    >
+      <div
+        class="container max-w-screen-xl mx-auto flex items-center justify-between md:justify-around p-4 md:p-2.5"
+      >
+        <!-- Logo -->
+        <div
+          class="flex items-center"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <a
+            href="../index.html"
+            class="flex items-center space-x-3"
+            aria-label="Camp Homepage"
+          >
+            <img
+              src="../img/campbooking.png"
+              alt="Camp Logo"
+              class="w-12 h-12 dark:hidden"
+            />
+            <img
+              src="../img/CAMPBOOKING_LOGO1-.png"
+              alt="Camp Logo"
+              class="w-12 h-12 hidden dark:block"
+            />
+            <span class="text-[18px] font-bold dark:text-white">
+              Camp <span class="text-blue-600 dark:text-white">Booking</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden md:flex space-x-8 items-center"
+          aria-label="Main Navigation"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <a
+            href="../index.html"
+            class="text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="./explorer.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Explore</a
+          >
+          <a
+            href="./blog.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Blog</a
+          >
+          <a
+            href="./about.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >About</a
+          >
+        </nav>
+
+        <!-- Desktop Actions -->
+        <div
+          class="hidden md:flex items-center space-x-6"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <!-- Dark Mode Toggle for Desktop -->
+          <button
+            id="dark-mode-toggle"
+            class="text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="sun-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+              <path
+                id="moon-icon"
+                class="hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          <!-- Auth Buttons -->
+          <a
+            href="./login.html"
+            class="px-4 py-2 text-green-900 border-l-2 border-gray-300 hover:bg-gray-100 transition dark:border-gray-600 dark:text-green-300 dark:hover:bg-gray-700 focus:ring-2 focus:ring-green-500"
+            >Log in</a
+          >
+          <a
+            href="./booking.html"
+            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition dark:bg-blue-700 dark:hover:bg-blue-800 focus:ring-2 focus:ring-blue-500"
+            >Book Now</a
+          >
+        </div>
+
+        <!-- Mobile Actions -->
+        <div class="flex items-center space-x-3 md:hidden">
+          <button
+            id="mobile-dark-mode-toggle"
+            class="text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                id="mobile-sun-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+              <path
+                id="mobile-moon-icon"
+                class="hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          <button
+            id="menu-toggle"
+            class="text-gray-700 dark:text-gray-300"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-open"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+              <path
+                id="menu-close"
+                class="hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden sticky top-0 z-50 px-4 pb-4 space-y-4 bg-white dark:bg-gray-800 transition-all duration-300"
+        aria-hidden="true"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
+          <a
+            href="../index.html"
+            class="text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="./explorer.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Explore</a
+          >
+          <a
+            href="./blog.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >Blog</a
+          >
+          <a
+            href="./about.html"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 text-sm font-medium"
+            >About</a
+          >
+        </nav>
+        <div class="space-y-3">
+          <a
+            href="./login.html"
+            class="block px-4 py-2 border border-gray-300 rounded-md text-green-900 text-center hover:bg-gray-100 transition dark:border-gray-600 dark:text-green-300 dark:hover:bg-gray-700 focus:ring-2 focus:ring-green-500"
+            >Log in</a
+          >
+          <a
+            href="./booking.html"
+            class="block px-4 py-2 bg-blue-600 text-white rounded-md text-center hover:bg-blue-700 transition dark:bg-blue-700 dark:hover:bg-blue-800 focus:ring-2 focus:ring-blue-500"
+            >Book Now</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div
+      class="relative bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800"
+    >
+      <div class="absolute inset-0 bg-black opacity-20"></div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-30 text-center"
+      >
+        <h1
+          class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          Find the Perfect Hotel on Camp
+        </h1>
+        <p
+          class="mt-4 text-lg text-indigo-200"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          From cheap hotels to luxury rooms and everything in between
+        </p>
+      </div>
+    </div>
+
+    <!-- Search Form -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-10">
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-4 sm:p-6 border-gray-200 dark:border-gray-700"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="300"
+      >
+        <form class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 items-end">
+          <!-- Location -->
+          <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
+            <label
+              class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            >
+              <svg
+                class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              Location
+            </label>
+            <input
+              id="location"
+              type="text"
+              placeholder="Zurich, Switzerland"
+              class="w-full px-4 py-3 border outline-blue-500 border-gray-200 dark:border-gray-400 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-transparent"
+            />
+          </div>
+
+          <!-- Check-in -->
+          <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
+            <label
+              class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            >
+              <svg
+                class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Check in
+            </label>
+            <input
+              type="date"
+              class="w-full px-4 py-3 border outline-blue-500 border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-transparent"
+            />
+          </div>
+
+          <!-- Check-out -->
+          <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="600">
+            <label
+              class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            >
+              <svg
+                class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Check out
+            </label>
+            <input
+              type="date"
+              class="w-full px-4 py-3 border border-gray-200 outline-blue-500 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-transparent"
+            />
+          </div>
+
+          <!-- Guests -->
+          <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="700">
+            <label
+              class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            >
+              <svg
+                class="w-4 h-4 mr-1.5 text-gray-500 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+                />
+              </svg>
+              Guests
+            </label>
+            <select
+              class="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option>1 Guest</option>
+              <option selected>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4+ Guests</option>
+            </select>
+          </div>
+
+          <!-- Search Button -->
+          <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="800">
+            <button
+              onclick="document.getElementById('location').focus()"
+              type="button"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-4 rounded-lg flex items-center justify-center transition-colors"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar Filters -->
+        <div class="lg:w-1/4 bg-white dark:bg-gray-800">
+          <div
+            class="bg-white dark:bg-gray-800 shadow-sm p-6 border-l-2 border-gray-400 dark:border-gray-300"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <h3
+              class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
+              Popular filters
+            </h3>
+            <!-- Filter Categories -->
+            <div class="space-y-4">
+              <!-- Property Type -->
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <button
+                  onclick="toggleDropdown('propertyType', this)"
+                  class="font-medium text-gray-900 dark:text-white mb-2 w-full text-left flex justify-between items-center"
+                >
+                  <span>Property type</span>
+                  <i
+                    class="fa-solid fa-caret-down transition-transform duration-300"
+                  ></i>
+                </button>
+                <div id="propertyType" class="space-y-2 hidden">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Hotels</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Apartments</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Guest houses</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Hostels</span
+                    >
+                  </label>
+                </div>
+              </div>
+
+              <!-- Facilities -->
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                <button
+                  onclick="toggleDropdown('facilities', this)"
+                  class="font-medium text-gray-900 dark:text-white mb-2 w-full text-left flex justify-between items-center"
+                >
+                  <span>Facilities</span>
+                  <i
+                    class="fa-solid fa-caret-down transition-transform duration-300"
+                  ></i>
+                </button>
+                <div id="facilities" class="space-y-2 hidden">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Free WiFi</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Parking</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Pool</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Spa</span
+                    >
+                  </label>
+                </div>
+              </div>
+
+              <!-- Property Rating -->
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                <button
+                  onclick="toggleDropdown('propertyRating', this)"
+                  class="font-medium text-gray-900 dark:text-white mb-2 w-full text-left flex justify-between items-center"
+                >
+                  <span>Property Rating</span>
+                  <i
+                    class="fa-solid fa-caret-down transition-transform duration-300"
+                  ></i>
+                </button>
+                <div id="propertyRating" class="space-y-2 hidden">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >1 Star</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >2 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >3 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >4 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >5 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >6 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >7 Stars</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Unrated</span
+                    >
+                  </label>
+                </div>
+              </div>
+
+              <!-- Popular Places -->
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+                <button
+                  onclick="toggleDropdown('popularplaces', this)"
+                  class="font-medium text-gray-900 dark:text-white mb-2 w-full text-left flex justify-between items-center"
+                >
+                  <span>Popular Places</span>
+                  <i
+                    class="fa-solid fa-caret-down transition-transform duration-300"
+                  ></i>
+                </button>
+                <div id="popularplaces" class="space-y-2 hidden">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Angkor Wat</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Bayon Temple</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Royal Palace</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Koh Rong</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Kampot</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Kep</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Battambang</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Preah Vihear</span
+                    >
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300"
+                      >Phnom Penh Night Market</span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Listings -->
+        <div class="lg:w-3/4 scroll-auto">
+          <div class="flex justify-between items-center mb-6">
+            <h2
+              class="text-xl font-semibold text-gray-900 dark:text-white"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
+              Properties in Cambodia :
+              <span class="text-blue-600">1255 properties found</span>
+            </h2>
+            <div
+              class="flex items-center space-x-2"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <span class="text-sm text-gray-600 dark:text-gray-400"
+                >Sort by:</span
+              >
+              <select
+                class="border border-gray-200 dark:border-gray-600 rounded-md px-3 py-1 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              >
+                <option>Recommended</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Rating</option>
+              </select>
+            </div>
+          </div>
+
+
+          <!-- Hotel Cards -->
+          <div class="space-y-6">
+            <!-- card 1 -->
+          <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://iroha-garden-resort.hotels-phnom-penh.net/data/Photos/OriginalPhoto/6840/684002/684002190.JPEG"
+        alt="iRoHa Garden Hotel & Resort Phnom Penh"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.7/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            iRoHa Garden Hotel & Resort
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Serene residential area • 1 km from central attractions
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Highly rated with <span class="font-medium text-gray-800 dark:text-white">9.7/10</span> from 1,500+ reviews. Guests love the peaceful gardens, warm staff, and cozy rooms.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $85/night
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Additional taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- card 2 -->
+           <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://q-xx.bstatic.com/xdata/images/hotel/max500/72035173.jpg?k=c5390a301d1c0784e6bdac4a1da8f517ecb3c1fc9e0e1e2ab95645a7ea9d6b48&o="
+        alt="Aquarius Hotel & Urban Resort"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.2/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Aquarius Hotel & Urban Resort
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Near Royal Palace • 1.5 km from center
+          </p>
+          <div class="flex items-center mt-2">
+            <div class="flex text-yellow-400">
+              <!-- Star SVG icons -->
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c..."/> <!-- shortened for brevity -->
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c..."/>
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c..."/>
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c..."/>
+              </svg>
+              <svg class="w-4 h-4 fill-current opacity-40" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c..."/>
+              </svg>
+            </div>
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              860 Reviews
+            </span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            A trendy urban escape in the heart of Phnom Penh—enjoy skyline views, an infinity pool, and luxurious modern design.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $95
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            $12 taxes and fees
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+            <!-- card 3 -->
+           <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://pix10.agoda.net/hotelImages/6021167/1132521478/7cfa37f527ad71a5cc1f87a922349c57.jpeg?ce=2&s=414x232"
+        alt="Deluxe Room at Leonardo Boutique Hotel"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.3/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Deluxe Room – Leonardo Boutique Hotel Rigihof
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Stylish boutique comfort
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Spacious deluxe room rated <span class="font-medium text-gray-800 dark:text-white">9.3 out of 10</span> by 2,470 guests for its comfort, design, and relaxing ambiance. Includes air conditioning, modern furnishings, and serene views.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $85/night
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes not included
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Book now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+            <!-- card 4 -->
+            <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/633547571.jpg?k=aa99f6b8c548764121fa2d14564251fbec29c6f8c35e24750071134cf3991604&o=&hp=1"
+        alt="White Sand Ark Resort, Koh Rong"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.3/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            White Sand Ark Resort
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Sok San Beach, Koh Rong • 2 min walk to the sea • Peaceful beachfront
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Rated <span class="font-medium text-gray-800 dark:text-white">9.3 out of 10</span> by guests for its clean white sand, cozy rooms, and warm hospitality. Ideal for honeymoons and beach lovers.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $64/night
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+
+            <!-- card 5 -->
+            <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/8e/26/7f.jpg"
+        alt="Angkor Wat Temple"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.8/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Angkor Wat Temple
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Siem Reap, Cambodia • UNESCO World Heritage Site
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            One of the most iconic landmarks in Southeast Asia, Angkor Wat is a vast temple complex admired for its intricate carvings, spiritual ambiance, and stunning sunrise views. Rated <span class="font-medium text-gray-800 dark:text-white">9.8/10</span> by travelers worldwide.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            Free Entry
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Temple pass required • Guided tours available
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Explore more
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+
+            <!-- card 6 -->
+            <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://pppenglish.sgp1.digitaloceanspaces.com/image/main/20247/23_7_2024_img_5760.jpg"
+        alt="Kampot Riverside"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.1/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Kampot Riverside Promenade
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Kampot, Cambodia • Scenic riverwalk with mountain views
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Rated <span class="font-medium text-gray-800 dark:text-white">9.1/10</span> by visitors for its peaceful atmosphere, charming cafés, and sunset boat rides. A perfect blend of nature and local life.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            Free Entry
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Boat tours from $5 • Local guides available
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Explore more
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+            <!-- card 7 -->
+            <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://pix10.agoda.net/property/69710992/0/be88d847370e71862df4704372041cd4.jpeg?ce=2&s=414x232"
+        alt="Deluxe Room at The 252 Boutique Hotel"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.2/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Deluxe Room – The 252 Boutique Hotel
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Near Independence Monument
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Rated <span class="font-medium text-gray-800 dark:text-white">9.2/10</span> by 1,498 guests. This stylish room includes a king-size bed, rain shower, private balcony, and pool access.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $58/night
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Book this room
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+
+            <!-- card 8 -->
+            <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://www.stayoverhere.com/images/staylocal_business/c_c/1005x765/boutique-indochine-d-angkor-20240213224921263300.webp"
+        alt="The 252 Boutique Hotel Phnom Penh"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.2/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            The 252 Boutique Hotel
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Near Independence Monument
+          </p>
+          <div class="flex items-center mt-2">
+            <div class="flex text-yellow-400">
+              <!-- Star icons -->
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l..."/></svg>
+            </div>
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              1,498 Reviews
+            </span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            A peaceful oasis in the heart of Phnom Penh, The 252 offers stylish rooms, a saltwater pool, and lush tropical gardens. Free WiFi and breakfast included.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $58
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+              </div>
+
+            <!-- card 9  -->
+             <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/10/6b/ba/caption.jpg?w=500&h=-1&s=1"
+        alt="Deluxe Room at iRoHa Garden Hotel"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.1/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Deluxe Room – iRoHa Garden Hotel & Resort
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Serene VIP neighborhood • 1.5 km from center
+          </p>
+          <div class="flex items-center mt-2">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+            </div>
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              570 Reviews
+            </span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            This deluxe room offers a peaceful garden view, king-size bed, rain shower, and complimentary WiFi. Guests love the tranquil setting and attentive service.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $85
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+            <!-- card 10 -->
+                  <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/473740702.jpg?k=a7937d647a6001f373fc540f07c90c8aba3303889b3b84334500f4470f280199&o=&hp=1"
+        alt="Long Set Beach, Koh Rong"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.1/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Long Set Beach – Koh Rong Island
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Koh Rong, Cambodia • 3 km from Koh Toch Pier • White sand paradise
+          </p>
+          <div class="flex items-center mt-2">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+            </div>
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              570 Reviews
+            </span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            Long Set Beach is known for its soft white sand and peaceful atmosphere.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            Free Entry
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Boat access from Sihanoukville • Local tours available
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Explore more
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+                </div>
+
+            <!-- card 11 -->
+
+             <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/166930530.jpg?k=8845a69e98e6bc6b6b0e5c5458182e8c33a343a771cbdbb6c2a6664a78683c1a&o=&hp=1"
+        alt="Phnom Penh Riverside"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-yellow-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        8.5/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Phnom Penh Riverside
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Phnom Penh, Cambodia • Near Royal Palace
+          </p>
+          <div class="flex items-center mt-2">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+              <svg class="w-4 h-4 text-gray-300" viewBox="0 0 20 20"><path d="M9.049 2.927..."/></svg>
+            </div>
+            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+              1,450 Reviews
+            </span>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            A scenic promenade along the Tonle Sap River, perfect for sunset strolls, local cafés, and views of the Royal Palace.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            Free Entry
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Boat rides from $5 • Local guides available
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Explore more
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+
+            <!-- card 12  -->
+         <div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/30/e0/dd/hotel-entrance.jpg?w=900&h=500&s=1"
+        alt="Viroth's Hotel Siem Reap"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.8/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Viroth’s Hotel
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Siem Reap, Cambodia • Wat Bo Village
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            A retro-chic oasis with lush gardens, saltwater pool, and spa. Guests love the design, service, and peaceful vibe—rated <span class="font-medium text-gray-800 dark:text-white">9.8/10</span> by over 2,700 travelers.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $120
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Includes breakfast • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            See availability
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+            <!-- end card 13 -->
+<div
+  class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border-gray-300 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow"
+>
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-64 h-48 bg-gray-200 dark:bg-gray-700 relative">
+      <img
+        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80"
+        alt="Deluxe Room at Angkor Palace Resort"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium"
+      >
+        9.4/10
+      </div>
+    </div>
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-start">
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Deluxe Room – Angkor Palace Resort
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            Siem Reap, Cambodia • Garden view
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            42 sqm room with teak floors, private balcony, and pool or garden views. Includes free WiFi, minibar, and coffee/tea setup. Guests love the peaceful setting and Khmer-inspired design.
+          </p>
+        </div>
+        <div class="text-right ml-4">
+          <div class="text-2xl font-bold text-gray-900 dark:text-white">
+            $85/night
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Breakfast included • Taxes may apply
+          </div>
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            Book this room
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            <!-- end card -->
+          </div>
+          <!-- end all card  -->
+
+          <!-- Pagination -->
+          <div class="flex justify-center items-center space-x-2 mt-8">
+            <button
+              class="px-3 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Previous
+            </button>
+            <button class="px-3 py-2 text-sm bg-blue-600 text-white rounded">
+              1
+            </button>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              2
+            </button>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              3
+            </button>
+            <span class="px-2 text-gray-500 dark:text-gray-400">...</span>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              10
+            </button>
+            <button
+              class="px-3 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-700 text-white"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <div class="flex items-center space-x-3">
+              <img src="../img/CAMPBOOKING_LOGO1-.png" alt="Camp Logo" class="h-12 w-12" />
+              <span class="text-xl font-bold">Camp Booking</span>
+            </div>
+            <p class="mt-4 text-sm text-gray-300">
+              Camp Experiences, the world’s leading travel platform, helps
+              millions discover unforgettable destinations, hotels, and
+              adventures.
+            </p>
+            <div
+              class="flex mt-4 space-x-4"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <a href="#" class="hover:text-gray-400" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="hover:text-gray-400" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="hover:text-gray-400" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Links 1 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <h3 class="text-lg font-semibold mb-4">About Us</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="#" class="hover:text-white">Our Story</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li><a href="#" class="hover:text-white">Press</a></li>
+              <li><a href="#" class="hover:text-white">Privacy</a></li>
+              <li><a href="#" class="hover:text-white">Terms</a></li>
+            </ul>
+          </div>
+          <!-- Links 2 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <h3 class="text-lg font-semibold mb-4">Travel Services</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="#" class="hover:text-white">Explore Destinations</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Book Hotels</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Unique Experiences</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Travel Guides</a></li>
+              <li><a href="#" class="hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div
+            data-aos="fade-left"
+            data-aos-delay="500"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
+            <form
+              class="flex items-center border border-gray-500 rounded-full overflow-hidden"
+              aria-label="Newsletter Signup"
+              data-aos="zoom-in"
+              data-aos-delay="600"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full px-4 py-2 bg-gray-800 text-white focus:outline-none"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-gray-700 px-4 py-2"
+                aria-label="Submit newsletter signup"
+              >
+                <svg
+                  class="h-5 w-5 text-blue-400 hover:text-blue-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </form>
+            <p class="mt-4 text-xs text-gray-400">
+              Operated by Camp Experiences Travel Pte. Ltd. (reg. no.
+              012345987).
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-10 border-t border-gray-600 pt-6 text-sm text-gray-400 flex flex-col sm:flex-row justify-between items-center"
+          data-aos="fade-up"
+          data-aos-delay="700"
+          data-aos-anchor-placement="top-bottom"
+        >
+          <span>© Camp Experiences 2025</span>
+          <div class="flex space-x-4 mt-2 sm:mt-0">
+            <a href="#" class="hover:text-white">Terms</a>
+            <a href="#" class="hover:text-white">Privacy</a>
+            <a href="#" class="hover:text-white">Cookies</a>
+            <a href="#" class="hover:text-white">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- script  -->
+    <script src="../node_modules/preline/dist/scrollspy.js"></script>
+    <script src="../javascript/script02.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
