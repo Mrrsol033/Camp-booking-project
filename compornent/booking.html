@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel Booking Form</title>
+    <title>Booking</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body class="bg-gray-100 text-gray-900">
 
     <!-- Page Title -->
     <div class="text-center pt-6 sm:pt-10">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900"><a href="../index.html">Book Your Stay</a></h1>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600"><a href="../index.html">Booking</a></h1>
       <div class="w-16 sm:w-20 h-1 bg-pink-600 mx-auto mt-2 rounded"></div>
     </div>
 
@@ -19,12 +19,12 @@
 
       <!-- Reservation Form -->
       <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
-        <h2 class="text-xl sm:text-2xl font-bold text-blue-900 mb-4">Hotel Room Reservation Form</h2>
+        <h2 class="text-xl sm:text-2xl font-bold text-blue-600 mb-4">Hotel Room Reservation Form</h2>
         <form class="space-y-5">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
               <label class="block text-sm font-medium mb-1">First Name</label>
-              <input type="text" class="w-full border outline-blue-400  rounded px-4 py-2" placeholder="Lor" />
+              <input type="text" class="w-full border outline-blue-500 border-gray-200 dark:border-gray-400  rounded px-4 py-2" placeholder="Lor" />
             </div>
             <div>
               <label class="block text-sm font-medium mb-1">Last Name</label>
@@ -32,15 +32,23 @@
             </div>
           </div>
 
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-medium mb-1">Phone Number</label>
+            <input type="tel" class="w-full border outline-blue-400 rounded px-4 py-2" placeholder="+855 ..." />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Hotels or Places </label>
+            <input type="tel" class="w-full border outline-blue-400 rounded px-4 py-2" placeholder="Name hotels or Places" />
+          </div>
+        </div>
+
           <div>
             <label class="block text-sm font-medium mb-1">Email Address</label>
             <input type="email" class="w-full border outline-blue-400 rounded px-4 py-2" placeholder="email@example.com" />
           </div>
 
-          <div>
-            <label class="block text-sm font-medium mb-1">Phone Number</label>
-            <input type="tel" class="w-full border outline-blue-400 rounded px-4 py-2" placeholder="+855 ..." />
-          </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
