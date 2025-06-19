@@ -9,3 +9,4 @@
 //  [require('preline/plugin')],
 
 // };
+// tailwind.config.js
